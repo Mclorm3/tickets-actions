@@ -21,7 +21,7 @@ run-windows-commands:
     - name: Directory
     - run: Get-Location
     - name: Ditector using bash
-      run: pwd
-      shell: bash 
-      name: shell commands
+    - run: pwd
+    - shell: bash 
+    - name: shell commands
       
