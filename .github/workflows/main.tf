@@ -1,4 +1,4 @@
- #1) Terraform block
+/* #1) Terraform block
  terraform {
      required_version= "~> 1.0"  #1.1.4./5/6/7   1.2/3/4/5  1.1.4/5/6/7
      required_providers {
@@ -7,7 +7,7 @@
          version = "~> 3.0"
         }
       } 
-   }
+   
    /* backend "s3" {
       bucket = "terraform-mylandmark"
       key    = "prod/terraform.tfstate"
@@ -19,8 +19,8 @@
 #2) Provider block:  plugin /api
 
 provider "aws" {
-  #profile = "default" #AWS Credential Profile configured on your local desktop terminal $HOME/.aws/credentials
-  #region       = "us-east-1"
+  #profile = "default"
+  region       = "us-east-1"
   default_tags {
     tags = local.default_tags
   } 
@@ -29,7 +29,7 @@ provider "aws" {
 
 
 #3)Resource block
-resource "aws_instance" "bootcamp101" {
+resource "aws_instance" "bootcamp30" {
   #ami = "ami-0e5b6b6a9f3db6db8" # Amazon Linux
   ami           = data.aws_ami.amzlinux2.id
   #instance_type = var.instance_type[0]
@@ -52,28 +52,28 @@ variable "instance_type" {
  # default = ["t2.micro", "t2.medium", "t3.large"]
 }
 
-variable "app_name" {
+variable "environment" {
+  description = "environment"
+  #type        = list(string)
+  type    = string
+  default = "prod"
+}
+
+variable  "app_name"{
   description = "app_name"
   #type        = list(string)
   type    = string
   default = "jenkins"
 }
-
-variable "environment" {
-  description = "environment"
-  #type        = list(string)
-  type    = string
-  default = "production"
-}
 #5) Outputs block:
 
 output "public_ip" {
   description = "ec2 instance publicip"
-  value       = aws_instance.bootcamp101.public_ip
+  value       = aws_instance.bootcamp30.public_ip
 }
 output "az" {
   description = "ec2 instance availability zone"
-  value       = aws_instance.bootcamp101.availability_zone
+  value       = aws_instance.bootcamp30.availability_zone
 }
 
 #6) Local block:
