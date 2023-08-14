@@ -3,7 +3,7 @@ name: shell commands
 on: [push]
 
 jobs:
- run-shell-commands:
+ run-shell-command:
   run-on:ubuntu-latest
   steps:
    - name: checkout
@@ -16,12 +16,12 @@ jobs:
        pwd
 run-windows-commands:
   runs-on: windows-latest
-  needs: ["run-shell-commands"]
+  needs: ["run-shell-command"]
   steps:
     - name: Directory
     - run: Get-Location
     - name: Ditector using bash
-    - run: pwd
-    - shell: bash 
-    - name: shell commands
+      run: pwd
+      shell: bash 
+    
       
