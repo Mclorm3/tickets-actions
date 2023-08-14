@@ -5,9 +5,9 @@
        aws = {
          source  = "hashicorp/aws"
          version = "~> 3.0"
-       }
-    } 
-	
+        }
+      } 
+   }
    /* backend "s3" {
       bucket = "terraform-mylandmark"
       key    = "prod/terraform.tfstate"
