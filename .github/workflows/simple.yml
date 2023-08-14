@@ -4,24 +4,24 @@ on: [push]
 
 jobs:
  run-shell-command:
-  run-on:ubuntu-latest
+  run-on: ubuntu-latest
   steps:
    - name: checkout
      uses: actions/checkout@v3
    - name: echo string
      run: echo "Hello"
    - name: Multiline script
-   - run: |
+      run: |
        node -v
        pwd
-run-windows-commands:
+run-windows-command:
   runs-on: windows-latest
   needs: ["run-shell-command"]
   steps:
     - name: Directory
-    - run: Get-Location
-    - name: Ditector using bash
+      run: Get-Location
+    - name: Ditectory using bash
       run: pwd
       shell: bash 
-    - name: shell commands
+   
       
