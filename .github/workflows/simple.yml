@@ -20,7 +20,7 @@ run-windows-command:
   steps:
     - name: Directory
       run: Get-Location
-    - name: Ditectory using bash
+    - name: Directory using bash
       run: pwd
       shell: bash 
    
