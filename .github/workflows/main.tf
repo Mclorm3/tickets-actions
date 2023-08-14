@@ -1,20 +1,20 @@
-/* #1) Terraform block
+#1) Terraform block
  terraform {
      required_version= "~> 1.0"  #1.1.4./5/6/7   1.2/3/4/5  1.1.4/5/6/7
-     required_providers {
+  required_providers {
        aws = {
          source  = "hashicorp/aws"
          version = "~> 3.0"
-        }
-      } 
-   */
-   /* backend "s3" {
+      }
+   } 
+   
+   backend "s3" {
       bucket = "terraform-mylandmark"
       key    = "prod/terraform.tfstate"
       region = "us-east-1"
       dynamodb_table = "terraform_lock"
     }
-  }*/
+  }
 
 #2) Provider block:  plugin /api
 
