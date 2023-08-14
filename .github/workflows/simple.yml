@@ -9,7 +9,7 @@ jobs:
    - name: checkout
      uses: actions/checkout@v3
    - name: echo string
-     run:echo "Hello"
+     run: echo "Hello"
    - name: Multiline script
    - run: |
        node -v
@@ -23,5 +23,5 @@ run-windows-commands:
     - name: Ditector using bash
       run: pwd
       shell: bash 
-    
+    - name: shell commands
       
